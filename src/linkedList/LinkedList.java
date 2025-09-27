@@ -7,6 +7,7 @@ import java.util.function.Consumer;
  * 
  */
 public class LinkedList<T> {
+//	beginning item
 	private LinkedListNode<T> head;
 
 //	root getter
