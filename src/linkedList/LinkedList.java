@@ -6,7 +6,7 @@ package linkedList;
 /**
  * 
  */
-public class LinkedList {
+public class LinkedList<T> {
 
 	/**
 	 * @param args
