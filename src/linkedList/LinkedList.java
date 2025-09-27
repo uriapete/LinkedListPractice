@@ -46,6 +46,28 @@ public class LinkedList<T> {
 		tail = tail.setNext(newNode);
 	}
 
+//	display / print all nodes / data
+	public void printAll() {
+//		header
+		System.out.println("Displaying list " + this + ":");
+		
+//		print list - start with '{'
+		System.out.print("{ ");
+		
+//		for each node, print it
+		traverse(node -> {
+//			if the current node isn't the first, add comma
+			if(node != head) {
+				System.out.print(", ");
+			}
+			
+			System.out.print(node.getData());
+		});
+		
+//		close list with '}'
+		System.out.println(" }");
+	}
+
 	/**
 	 * @param args
 	 */
