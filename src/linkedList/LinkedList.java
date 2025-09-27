@@ -11,7 +11,7 @@ public class LinkedList<T> {
 	private LinkedListNode<T> head;
 
 //	root getter
-	public LinkedListNode<T> getRoot(){
+	public LinkedListNode<T> getHead(){
 		return head;
 	}
 	
