@@ -22,4 +22,9 @@ public class LinkedListNode<T> {
 		new LinkedListNode<T>(d);
 		next = n;
 	}
+	
+//	sets next node
+	protected void setNext(LinkedListNode<T> n) {
+		next = n;
+	}
 }
