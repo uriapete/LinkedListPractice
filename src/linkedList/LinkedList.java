@@ -30,6 +30,22 @@ public class LinkedList<T> {
 		}
 	}
 
+//	add new node to end
+	public void append(T data) {
+//		create new node
+		LinkedListNode<T> newNode = new LinkedListNode<T>(data);
+		
+//		if the list is empty (head null), set head and tail
+		if(head == null) {
+			head = newNode;
+			tail = newNode;
+			return;
+		}
+		
+//		gets tail, set next, new next is now set as tail
+		tail = tail.setNext(newNode);
+	}
+
 	/**
 	 * @param args
 	 */
