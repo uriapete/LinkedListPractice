@@ -7,10 +7,24 @@ package linkedList;
  * 
  */
 public class LinkedListNode<T> {
-	T data;
+	private T data;
+	
+//	data getter
+	public T getData() {
+		return data;
+	}
 	
 //	ref to next node
-	LinkedListNode<T> next;
+	private LinkedListNode<T> next;
+	
+//	next getter
+	public LinkedListNode<T> getNext(){
+		return next;
+	}
+//	sets next node
+	protected void setNext(LinkedListNode<T> n) {
+		next = n;
+	}
 	
 //	base constructor
 	public LinkedListNode(T d){
@@ -20,11 +34,6 @@ public class LinkedListNode<T> {
 // 	constructor with next option
 	public LinkedListNode(T d, LinkedListNode<T> n) {
 		new LinkedListNode<T>(d);
-		next = n;
-	}
-	
-//	sets next node
-	protected void setNext(LinkedListNode<T> n) {
 		next = n;
 	}
 	
