@@ -27,4 +27,9 @@ public class LinkedListNode<T> {
 	protected void setNext(LinkedListNode<T> n) {
 		next = n;
 	}
+	
+//	creates new node in front, the former next becomes the next node of the new next node
+	protected void newNodeInFront(T d) {
+		next = new LinkedListNode<T>(d, next);
+	}
 }
