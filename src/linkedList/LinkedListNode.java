@@ -22,8 +22,10 @@ public class LinkedListNode<T> {
 		return next;
 	}
 //	sets next node
-	protected void setNext(LinkedListNode<T> n) {
+//	returns next node to allow chains
+	protected LinkedListNode<T> setNext(LinkedListNode<T> n) {
 		next = n;
+		return n;
 	}
 	
 //	base constructor
