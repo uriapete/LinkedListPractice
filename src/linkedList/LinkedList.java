@@ -7,6 +7,7 @@ package linkedList;
  * 
  */
 public class LinkedList<T> {
+	private LinkedListNode<T> root;
 
 	/**
 	 * @param args
