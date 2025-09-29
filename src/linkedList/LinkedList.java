@@ -30,11 +30,8 @@ public class LinkedList<T> {
 		}
 	}
 
-//	add new node to end
-	public void append(T data) {
-//		create new node
-		LinkedListNode<T> newNode = new LinkedListNode<T>(data);
-		
+//	append node directly to end
+	public void appendNode(LinkedListNode<T> newNode) {
 //		if the list is empty (head null), set head and tail
 		if(head == null) {
 			head = newNode;
@@ -46,6 +43,15 @@ public class LinkedList<T> {
 		tail = tail.setNext(newNode);
 	}
 
+//	add new data as node to end
+	public void append(T data) {
+//		create new node
+		LinkedListNode<T> newNode = new LinkedListNode<T>(data);
+	
+//		append node
+		appendNode(newNode);
+	}
+	
 //	display / print all nodes / data
 	public void printAll() {
 //		header
