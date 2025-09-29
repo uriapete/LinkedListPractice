@@ -38,11 +38,17 @@ public class LinkedList<T> {
 			System.out.println("List is empty. This will be the first element.");
 			head = newNode;
 			tail = newNode;
+			
+//			display list
+			printAll();
 			return;
 		}
 		
 //		gets tail, set next, new next is now set as tail
 		tail = tail.setNext(newNode);
+		
+//		display list
+		printAll();
 	}
 
 //	add new data as node to end
