@@ -90,8 +90,31 @@ public class LinkedList<T> {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		LinkedList<String> americanFoodList = new LinkedList<>();
+		
+		americanFoodList.append("donut");
+		americanFoodList.append("french fries");
+		americanFoodList.append("hamburger");
+		
+		americanFoodList.printAll();
+		
+		LinkedList<String> chineseFoodList = new LinkedList<>();
+		chineseFoodList.append("chinese donut");
+		chineseFoodList.append("fried rice");
+		chineseFoodList.append("dumpling");
+		
+		chineseFoodList.printAll();
+		
+		LinkedList<String> ethiopianFoodList = new LinkedList<>();
+		ethiopianFoodList.append("Wat");
+		ethiopianFoodList.append("Tibs");
+		ethiopianFoodList.append("Kinche");
+		
+		ethiopianFoodList.printAll();
+		
+		americanFoodList.appendList(chineseFoodList);
 
+		americanFoodList.printAll();		
 	}
 
 }
