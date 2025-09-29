@@ -32,8 +32,10 @@ public class LinkedList<T> {
 
 //	append node directly to end
 	public void appendNode(LinkedListNode<T> newNode) {
+		System.out.println("Appending " + newNode.getData() + " to " + this);
 //		if the list is empty (head null), set head and tail
 		if(head == null) {
+			System.out.println("List is empty. This will be the first element.");
 			head = newNode;
 			tail = newNode;
 			return;
@@ -54,9 +56,11 @@ public class LinkedList<T> {
 	
 //	join lists by appending the other list to this
 	public void appendList(LinkedList<T> dataList) {
+		System.out.println("Appending data of " + dataList + " to the end of " + this);
 		dataList.traverse((node) ->{
 			this.appendNode(node);
 		});
+		System.out.println();
 	}
 	
 //	display / print all nodes / data
@@ -79,6 +83,7 @@ public class LinkedList<T> {
 		
 //		close list with '}'
 		System.out.println(" }");
+		System.out.println();
 	}
 
 	/**
