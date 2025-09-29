@@ -105,6 +105,7 @@ public class LinkedList<T> {
 		
 		chineseFoodList.printAll();
 		
+		// this info was taken from wikipedia "ethiopian cuisine"
 		LinkedList<String> ethiopianFoodList = new LinkedList<>();
 		ethiopianFoodList.append("Wat");
 		ethiopianFoodList.append("Tibs");
