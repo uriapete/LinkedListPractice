@@ -52,6 +52,13 @@ public class LinkedList<T> {
 		appendNode(newNode);
 	}
 	
+//	join lists by appending the other list to this
+	public void appendList(LinkedList<T> dataList) {
+		dataList.traverse((node) ->{
+			this.appendNode(node);
+		});
+	}
+	
 //	display / print all nodes / data
 	public void printAll() {
 //		header
