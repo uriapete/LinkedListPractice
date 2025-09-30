@@ -1,5 +1,9 @@
 /**
- * 
+ * Program Name: LinkedList Join Implementation
+ * Program Developer: Peter Uriarte
+ * Program Date: Y2025 / M09 / D29
+ * Program Version: v1.0.0.0 - release, codename Kinche
+ * (using epoch semver —— EPOCH.MAJOR.MINOR.PATCH / marketing.breaking(can no longer use same args).new feature.fix)
  */
 package linkedList;
 import java.util.function.Consumer;
