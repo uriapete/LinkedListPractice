@@ -6,6 +6,8 @@
  * (using epoch semver —— EPOCH.MAJOR.MINOR.PATCH / marketing.breaking(can no longer use same args).new feature.fix)
  */
 package linkedList;
+import java.io.File;
+import java.util.Scanner;
 import java.util.function.Consumer;
 /**
  * 
@@ -100,6 +102,60 @@ public class LinkedList<T> {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		// gets the input directory.
+		File inputDir = new File(System.getProperty("user.dir")+"/inputs/");
+
+		// prints what is available in the directory.
+		System.out.println("Available files in directory " + inputDir.getAbsolutePath());
+
+		// for each filename in the input dir, print.
+		for(String f : inputDir.list()) {
+			System.out.println(f);
+		}
+		
+		// prompt user for filename:
+		File input = null;
+
+		// scan console inp
+		try (Scanner cnslScnr = new Scanner(System.in)) {
+			// while input file has not been selected...
+			while (input==null) {
+				// input prompt
+				System.out.println();
+				System.out.println("Input file name of items and press enter");
+
+				// see if our input directory has the exact file the user wants
+				File[] results = inputDir.listFiles((File _, String name) -> name.equals(cnslScnr.nextLine()));
+
+				// if it does, set and be free
+				// case: only one match, so we have our file
+				if (results.length == 1) {
+					System.out.println("Caught.");
+					input = results[0];
+				}
+				// otherwise, go again
+				// case: input.length == 0 -> no match.
+				// case: input.length > 1 -> shouldn't happen, since the filter is asking for .equals, and every file has a unique path/name
+				else{
+					System.out.println("Invalid file name or something has gone horribly wrong.");
+					System.out.println("Please try again.");
+				}
+			}
+		}
+
+		// alright, now time to scan input
+		try (
+			Scanner inScn = new Scanner(input);
+		) {
+			while (inScn.hasNext()) {
+				System.out.println(inScn.next());
+			}
+			
+		} catch (Exception e) {
+			System.out.println(e);
+			System.out.println("Something has gone horribly wrong.");
+		}
+
 		LinkedList<String> americanFoodList = new LinkedList<>();
 		
 		americanFoodList.append("donut");
