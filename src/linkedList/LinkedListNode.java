@@ -45,4 +45,13 @@ public class LinkedListNode<T> {
     protected void newNodeInFront(T d) {
         next = new LinkedListNode<>(d, next);
     }
+
+    // removes the node after this node
+    // by setting the next next to the node after current next
+    protected void removeNodeAfter() {
+        if (this.next == null) {
+            return;
+        }
+        this.next = this.next.next;
+    }
 }

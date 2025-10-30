@@ -40,6 +40,70 @@ public class LinkedList<T> {
         }
     }
 
+	// removes the head
+	private  LinkedListNode<T> removeHead(){
+		// if there is no head, head is empty
+		if (this.head==null) {
+			System.out.println("This list is empty. Bye.");
+			return null;
+		}
+
+		// former head will be returned
+		LinkedListNode<T> former = this.head;
+
+		// message
+        System.out.println("Removing " + former + " from " + this);
+
+		// perform removal - garbage collector will destroy/free the object
+		this.head = this.head.getNext();
+
+		// print all to verify and return
+		this.printAll();
+		return former;
+	}
+
+    // remove node at specified index
+    public LinkedListNode<T> removeNodeAtIdx(int idx) {
+		// if index argument is 0 or less, assume intention of removing head
+		if(idx<=0){
+			return removeHead();
+		}
+
+		// else, go to the node before the intended index
+		LinkedListNode<T> preNode = this.head;
+		for (int i = 0; i < idx-1 && preNode != null; i++) {
+			preNode = preNode.getNext();
+		}
+
+		// if the preNode is null, that means we arrived at the end of the list
+		// therefore index is out of bounds
+		if (preNode == null||preNode.getNext()==null) {
+			System.out.println("Index out of bounds. Goodbye.");
+			return null;
+		}
+
+		// this will be returned
+		LinkedListNode<T> subject = preNode.getNext();
+		
+		// print message
+        System.out.println("Removing " + subject + " from " + this);
+
+		// perform removal
+		preNode.removeNodeAfter();
+		
+		// if the removed node is the tail,
+		// reset tail
+		if (subject == this.tail) {
+			this.tail = preNode.getNext();
+		}
+
+        // display list
+        printAll();
+
+		// return
+		return subject;
+    }
+
     // append node directly to end
     public void appendNode(LinkedListNode<T> newNode) {
         System.out.println("Appending " + newNode.getData() + " to " + this);
